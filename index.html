@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Two-player Buzzer Quiz</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>
+        Two-player Buzzer Quiz — Press <kbd>Space</kbd> to start or advance
+        questions
+      </h1>
+
+      <section class="scores">
+        <div class="player" id="player1">
+          <h2>Player 1</h2>
+          <div class="score" id="score1">0</div>
+          <div class="hint">Buzz: F</div>
+        </div>
+        <div class="player" id="player2">
+          <h2>Player 2</h2>
+          <div class="score" id="score2">0</div>
+          <div class="hint">Buzz: J</div>
+        </div>
+      </section>
+
+      <section class="question-area">
+        <div id="questionCard" class="card">
+          <div id="word" class="word">Press Space to start</div>
+          <div id="progress" class="progress"></div>
+        </div>
+
+        <div class="button-row">
+          <button class="buzzer p1" id="buzz1" disabled>
+            Player 1 Buzz (F)
+          </button>
+          <button id="startBtn">Start Next (Space)</button>
+          <button class="buzzer p2" id="buzz2" disabled>
+            Player 2 Buzz (J)
+          </button>
+        </div>
+
+        <div id="buzzInfo" class="buzz-info hidden">
+          <div id="buzzText"></div>
+          <div id="buzzCountdown" class="countdown"></div>
+        </div>
+
+        <div id="revealArea" class="reveal-area hidden">
+          <div class="judge">
+            <button id="markCorrect" disabled>Correct (+1) [1]</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="config">
+        <h3>Settings & Sample Questions</h3>
+        <label
+          >Word Delay (ms): <input id="wordDelay" type="number" value="500"
+        /></label>
+        <label
+          >Auto-reveal answer after submit (ms):
+          <input id="revealDelay" type="number" value="1200"
+        /></label>
+
+        <details>
+          <summary>Sample questions</summary>
+          <ol id="questionList"></ol>
+        </details>
+      </section>
+
+      <footer>
+        <small
+          >Keyboard: Player1 buzz F, Player2 buzz J, Start/Next Space, Reveal
+          R</small
+        >
+      </footer>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
