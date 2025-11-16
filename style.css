@@ -194,10 +194,33 @@ footer {
 }
 
 @media (max-width: 600px) {
+  h1 {
+    display: none;
+  }
+  h1 kbd {
+    display: none !important;
+  }
+  .hint {
+    display: none !important;
+    content: "";
+  }
+  footer small {
+    display: none !important;
+  }
+
+}
+
+@media (max-width: 600px) {
   .word {
     font-size: 26px;
   }
   .scores {
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  .scores .player {
+    flex: 1 1 0;
+    min-width: 0;
   }
 }
